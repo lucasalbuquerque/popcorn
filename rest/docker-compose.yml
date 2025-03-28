@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  popcorn_api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - '4000:4000'
+    volumes:
+      - .:/app
+    env_file:
+      - .env.development
+    depends_on:
+      - popcorn_postgres
+    networks:
+      - popcorn_network
+    environment:
+      - .env.development
+
+  popcorn_postgres:
+    image: postgres:15-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - popcorn_network
+
+volumes:
+  postgres_data:
+
+networks:
+  popcorn_network:
+    driver: bridge
