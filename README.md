@@ -94,7 +94,30 @@ The project leverages Azure OpenAI's GPT-3.5-turbo model through a multi-step re
 - Add request caching with intelligent invalidation
 - Implement response streaming for faster initial display
 - Optimize search performance with:
+
   - Elasticsearch synonyms
   - Custom analyzers
   - Relevance tuning
   - Aggregations for faceted search
+
+- Enhance AI chat response styling:
+  - Message bubble design:
+    - Distinct visual separation between AI and user messages
+    - Rounded corners and shadows for depth
+    - Color-coded backgrounds for easy identification
+  - Typography improvements:
+    - Hierarchical text styles for recommendations
+    - Proper line height and spacing for readability
+    - Emphasis on key product details
+  - Interactive elements:
+    - Expandable product details
+    - Click-to-copy product names
+    - Direct add-to-cart buttons
+  - Accessibility features:
+    - High contrast text options
+    - Screen reader optimizations
+    - Keyboard navigation support
+  - Loading states:
+    - Animated typing indicators
+    - Skeleton loading placeholders
+    - Progress indicators for long responses
